@@ -123,8 +123,16 @@ int main()
     collision_status_text_area.setPosition(sf::Vector2f(WINDOW_WIDTH - 70, 130));
     collision_status_text_area.setColor(sf::Color::Red);
 
+    sf::Text select_one("Select first: A", font, 15);
+    select_one.setPosition(sf::Vector2f(WINDOW_WIDTH - 190, 170));
+    select_one.setColor(sf::Color::Red);
+
+    sf::Text select_two("Select second: B", font, 15);
+    select_two.setPosition(sf::Vector2f(WINDOW_WIDTH - 190, 210));
+    select_two.setColor(sf::Color::Red);
+
     sf::Text author("By: Aakarshan Raj", font, 15);
-    author.setPosition(sf::Vector2f(WINDOW_WIDTH - 195, WINDOW_HEIGHT-20));
+    author.setPosition(sf::Vector2f(WINDOW_WIDTH - 195, WINDOW_HEIGHT - 20));
     author.setColor(sf::Color::Red);
 
     sf::RectangleShape line1;
@@ -186,10 +194,20 @@ int main()
 
                     window.close();
                 }
+                if (event.key.code == sf::Keyboard::A)
+                {
+                    draw_rect1 = true;
+                    draw_rect2 = false;
+                }
+                if (event.key.code == sf::Keyboard::S)
+                {
+                    draw_rect1 = false;
+                    draw_rect2 = true;
+                }
                 if (draw_rect1)
                 {
 
-                    if (event.key.code == sf::Keyboard::W)
+                    if (event.key.code == sf::Keyboard::Up)
                     {
                         shape_one.setPosition(sf::Vector2f(shape_one.getPosition().x, shape_one.getPosition().y - 10));
                         rect1.setPosition(sf::Vector2f(rect1.getPosition().x, rect1.getPosition().y - 10));
@@ -197,7 +215,7 @@ int main()
                         shape_one_center_x.setPosition(sf::Vector2f(shape_one_center_x.getPosition().x, shape_one_center_x.getPosition().y - 10));
                         shape_one_center_y.setPosition(sf::Vector2f(shape_one_center_y.getPosition().x, shape_one_center_y.getPosition().y - 10));
                     }
-                    if (event.key.code == sf::Keyboard::S)
+                    if (event.key.code == sf::Keyboard::Down)
                     {
                         shape_one.setPosition(sf::Vector2f(shape_one.getPosition().x, shape_one.getPosition().y + 10));
                         rect1.setPosition(sf::Vector2f(rect1.getPosition().x, rect1.getPosition().y + 10));
@@ -205,7 +223,7 @@ int main()
                         shape_one_center_x.setPosition(sf::Vector2f(shape_one_center_x.getPosition().x, shape_one_center_x.getPosition().y + 10));
                         shape_one_center_y.setPosition(sf::Vector2f(shape_one_center_y.getPosition().x, shape_one_center_y.getPosition().y + 10));
                     }
-                    if (event.key.code == sf::Keyboard::A)
+                    if (event.key.code == sf::Keyboard::Left)
                     {
                         shape_one.setPosition(sf::Vector2f(shape_one.getPosition().x - 10, shape_one.getPosition().y));
                         rect1.setPosition(sf::Vector2f(rect1.getPosition().x - 10, rect1.getPosition().y));
@@ -213,7 +231,7 @@ int main()
                         shape_one_center_x.setPosition(sf::Vector2f(shape_one_center_x.getPosition().x - 10, shape_one_center_x.getPosition().y));
                         shape_one_center_y.setPosition(sf::Vector2f(shape_one_center_y.getPosition().x - 10, shape_one_center_y.getPosition().y));
                     }
-                    if (event.key.code == sf::Keyboard::D)
+                    if (event.key.code == sf::Keyboard::Right)
                     {
                         shape_one.setPosition(sf::Vector2f(shape_one.getPosition().x + 10, shape_one.getPosition().y));
                         rect1.setPosition(sf::Vector2f(rect1.getPosition().x + 10, rect1.getPosition().y));
@@ -226,7 +244,7 @@ int main()
                 }
                 else if (draw_rect2)
                 {
-                    if (event.key.code == sf::Keyboard::W)
+                    if (event.key.code == sf::Keyboard::Up)
                     {
                         shape_two.setPosition(sf::Vector2f(shape_two.getPosition().x, shape_two.getPosition().y - 10));
                         rect2.setPosition(sf::Vector2f(rect2.getPosition().x, rect2.getPosition().y - 10));
@@ -234,7 +252,7 @@ int main()
                         shape_two_center_x.setPosition(sf::Vector2f(shape_two_center_x.getPosition().x, shape_two_center_x.getPosition().y - 10));
                         shape_two_center_y.setPosition(sf::Vector2f(shape_two_center_y.getPosition().x, shape_two_center_y.getPosition().y - 10));
                     }
-                    if (event.key.code == sf::Keyboard::S)
+                    if (event.key.code == sf::Keyboard::Down)
                     {
                         shape_two.setPosition(sf::Vector2f(shape_two.getPosition().x, shape_two.getPosition().y + 10));
                         rect2.setPosition(sf::Vector2f(rect2.getPosition().x, rect2.getPosition().y + 10));
@@ -242,7 +260,7 @@ int main()
                         shape_two_center_x.setPosition(sf::Vector2f(shape_two_center_x.getPosition().x, shape_two_center_x.getPosition().y + 10));
                         shape_two_center_y.setPosition(sf::Vector2f(shape_two_center_y.getPosition().x, shape_two_center_y.getPosition().y + 10));
                     }
-                    if (event.key.code == sf::Keyboard::A)
+                    if (event.key.code == sf::Keyboard::Left)
                     {
                         shape_two.setPosition(sf::Vector2f(shape_two.getPosition().x - 10, shape_two.getPosition().y));
                         rect2.setPosition(sf::Vector2f(rect2.getPosition().x - 10, rect2.getPosition().y));
@@ -250,7 +268,7 @@ int main()
                         shape_two_center_x.setPosition(sf::Vector2f(shape_two_center_x.getPosition().x - 10, shape_two_center_x.getPosition().y));
                         shape_two_center_y.setPosition(sf::Vector2f(shape_two_center_y.getPosition().x - 10, shape_two_center_y.getPosition().y));
                     }
-                    if (event.key.code == sf::Keyboard::D)
+                    if (event.key.code == sf::Keyboard::Right)
                     {
                         shape_two.setPosition(sf::Vector2f(shape_two.getPosition().x + 10, shape_two.getPosition().y));
                         rect2.setPosition(sf::Vector2f(rect2.getPosition().x + 10, rect2.getPosition().y));
@@ -345,6 +363,20 @@ int main()
                 collision_status_text_area.setString("0");
             }
         }
+        else if (check_collision.first <= 0 && check_collision.second > 0)
+        {
+            collision_status_text_y.setString(std::to_string((int)check_collision.second));
+            collision_status_text_y.setColor(sf::Color::Green);
+
+            play_ping = true;
+            collision_status_text_x.setString("0");
+            collision_status_text_area.setString("0");
+
+            collision_status_text_area.setColor(sf::Color::Red);
+            collision_status_text_x.setColor(sf::Color::Red);
+            collision_status_text.setString("False");
+            collision_status_text.setColor(sf::Color::Red);
+        }
 
         else
         {
@@ -386,6 +418,9 @@ int main()
         window.draw(collision_status_text_y);
         window.draw(collision_status_text_area);
         window.draw(author);
+
+        window.draw(select_one);
+        window.draw(select_two);
 
         if (draw_rect1)
             window.draw(rect1);
