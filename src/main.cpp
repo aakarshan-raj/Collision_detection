@@ -33,7 +33,7 @@ std::pair<float, float> detect_collision(shape *shape_one, shape *shape_two, boo
 {
 
     float dx, dy;
-    if (prev)
+    if (prev) // change starting prev position
     {
         dx = abs(shape_one->prev_pos.first - shape_two->prev_pos.first);
         dy = abs(shape_one->prev_pos.second - shape_two->prev_pos.second);
@@ -330,7 +330,6 @@ int main()
                         shape1.rect.getPosition().y - (SHAPE_ONE_HEIGHT / 2) < event.mouseButton.y &&
                         shape1.rect.getPosition().y + (SHAPE_ONE_HEIGHT / 2) > event.mouseButton.y)
                     {
-                        std::cout << "Shape one clicked" << std::endl;
                         draw_rect1 = true;
                         draw_rect2 = false;
                     }
@@ -340,7 +339,6 @@ int main()
                         shape2.rect.getPosition().y - (SHAPE_TWO_HEIGHT / 2) < event.mouseButton.y &&
                         shape2.rect.getPosition().y + (SHAPE_TWO_HEIGHT / 2) > event.mouseButton.y)
                     {
-                        std::cout << "Shape two clicked" << std::endl;
                         draw_rect2 = true;
                         draw_rect1 = false;
                     }
@@ -377,6 +375,19 @@ int main()
             collision_status_text_x.setColor(sf::Color::Green);
             if (check_collision.second > 0)
             {
+
+                // Collision Resolution
+                std::pair<float, float> prev_overlap = detect_collision(&shape1, &shape2, true);
+
+                if (prev_overlap.first > 0)
+                {
+                    std::cout << "Collision origin: vertical, magnitude:" << prev_overlap.first << std::endl;
+                }
+                else if (prev_overlap.second > 0)
+                {
+                    std::cout << "Collision origin: horizontal, magnitude:" << prev_overlap.second << std::endl;
+                }
+
                 if (play_ping)
                     sound.play();
 
@@ -389,17 +400,6 @@ int main()
 
                 collision_status_text_area.setColor(sf::Color::Green);
                 collision_status_text_area.setString(std::to_string((int)(check_collision.first * check_collision.second)));
-
-                // Collision Resolution
-                std::pair<float, float> prev_overlap = detect_collision(&shape1, &shape2, true);
-                if (prev_overlap.first > 0)
-                {
-                    std::cout << "Collision origin: vertical, magnitude:" << prev_overlap.first << std::endl;
-                }
-                else if (prev_overlap.second > 0)
-                {
-                    std::cout << "Collision origin: horizontal, magnitude:" << prev_overlap.second << std::endl;
-                }
             }
             else
             {
