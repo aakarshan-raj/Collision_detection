@@ -146,7 +146,7 @@ int main()
     select_one.setPosition(sf::Vector2f(WINDOW_WIDTH - 190, 170));
     select_one.setColor(sf::Color::Red);
 
-    sf::Text select_two("Select second: B", font, 15);
+    sf::Text select_two("Select second: S", font, 15);
     select_two.setPosition(sf::Vector2f(WINDOW_WIDTH - 190, 210));
     select_two.setColor(sf::Color::Red);
 
