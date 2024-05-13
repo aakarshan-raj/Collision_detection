@@ -388,13 +388,41 @@ int main()
                 // Collision Resolution
                 std::pair<float, float> prev_overlap = detect_collision(&shape1, &shape2, true);
 
-                if (prev_overlap.first > 0)
+                if (prev_overlap.first > 0) // TOP-DOWN collision
                 {
-                    std::cout << "Collision origin: vertical, magnitude:" << prev_overlap.first << ":" << prev_overlap.second << std::endl;
+                    std::cout << "Collision origin: vertical, magnitude:" << prev_overlap.first << ":" << prev_overlap.second << std::endl; // TOP collision
+                    if (draw_rect1)
+                    {
+                        shape1.rect.setPosition(sf::Vector2f(shape1.rect.getPosition().x, shape1.rect.getPosition().y - check_collision.second));
+                        shape1.bounding_box.setPosition(sf::Vector2f(shape1.rect.getPosition().x, shape1.rect.getPosition().y));
+                        shape1.X.setPosition(sf::Vector2f(shape1.X.getPosition().x, shape1.rect.getPosition().y));
+                        shape1.Y.setPosition(sf::Vector2f(shape1.Y.getPosition().x, shape1.rect.getPosition().y));
+                    }
+                    else if (draw_rect2)
+                    {
+                        shape2.rect.setPosition(sf::Vector2f(shape2.rect.getPosition().x, shape2.rect.getPosition().y - check_collision.second));
+                        shape2.bounding_box.setPosition(sf::Vector2f(shape2.rect.getPosition().x, shape2.rect.getPosition().y));
+                        shape2.X.setPosition(sf::Vector2f(shape2.X.getPosition().x, shape2.rect.getPosition().y));
+                        shape2.Y.setPosition(sf::Vector2f(shape2.Y.getPosition().x, shape2.rect.getPosition().y));
+                    }
                 }
-                else if (prev_overlap.second > 0)
+                else if (prev_overlap.second > 0) // RIGHT LEFT COLLISION
                 {
                     std::cout << "Collision origin: horizontal, magnitude:" << prev_overlap.second << ":" << prev_overlap.first << std::endl;
+                    if (draw_rect1) // RIGHT collision
+                    {
+                        shape1.rect.setPosition(sf::Vector2f(shape1.rect.getPosition().x + check_collision.first, shape1.rect.getPosition().y));
+                        shape1.bounding_box.setPosition(sf::Vector2f(shape1.rect.getPosition().x, shape1.rect.getPosition().y));
+                        shape1.X.setPosition(sf::Vector2f(shape1.rect.getPosition().x - 25, shape1.X.getPosition().y));
+                        shape1.Y.setPosition(sf::Vector2f(shape1.rect.getPosition().x + 10, shape1.Y.getPosition().y));
+                    }
+                    else if (draw_rect2)
+                    {
+                        shape2.rect.setPosition(sf::Vector2f(shape2.rect.getPosition().x + check_collision.first, shape2.rect.getPosition().y));
+                        shape2.bounding_box.setPosition(sf::Vector2f(shape2.rect.getPosition().x, shape2.rect.getPosition().y));
+                        shape2.X.setPosition(sf::Vector2f(shape2.rect.getPosition().x - 25, shape2.X.getPosition().y));
+                        shape2.Y.setPosition(sf::Vector2f(shape2.rect.getPosition().x + 10, shape2.Y.getPosition().y));
+                    }
                 }
 
                 if (play_ping)
