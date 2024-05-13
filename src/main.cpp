@@ -25,8 +25,17 @@ struct shape
 {
 public:
     sf::RectangleShape rect;
+    sf::RectangleShape bounding_box;
     std::pair<int, int> prev_pos;
-    shape(sf::RectangleShape rect_para) : rect(rect_para) {}
+    sf::Text X;
+    sf::Text Y;
+    shape(sf::RectangleShape rect_para, sf::RectangleShape bounding,
+          sf::Text x_point, sf::Text y_point,
+          int x, int y) : rect(rect_para),
+                          bounding_box(bounding),
+                          X(x_point),
+                          Y(y_point),
+                          prev_pos(std::make_pair(x, y)) {}
 };
 
 std::pair<float, float> detect_collision(shape *shape_one, shape *shape_two, bool prev = false)
@@ -77,15 +86,6 @@ int main()
     sf::RectangleShape shape_one(sf::Vector2f(SHAPE_ONE_WIDTH, SHAPE_ONE_HEIGHT));
     sf::RectangleShape shape_two(sf::Vector2f(SHAPE_TWO_WIDTH, SHAPE_TWO_HEIGHT));
 
-    shape shape1 = shape(shape_one);
-    shape shape2 = shape(shape_two);
-
-    shape1.rect.setOrigin(SHAPE_ONE_WIDTH / 2, SHAPE_ONE_HEIGHT / 2);
-    shape2.rect.setOrigin(SHAPE_TWO_WIDTH / 2, SHAPE_TWO_HEIGHT / 2);
-
-    shape1.rect.setFillColor(sf::Color(78, 245, 103));
-    shape2.rect.setFillColor(sf::Color(247, 62, 62));
-
     sf::RectangleShape rect1;
     rect1.setSize(sf::Vector2f(SHAPE_ONE_WIDTH, SHAPE_ONE_HEIGHT));
     rect1.setOrigin(sf::Vector2f(SHAPE_ONE_WIDTH / 2, SHAPE_ONE_HEIGHT / 2));
@@ -101,6 +101,32 @@ int main()
     rect2.setFillColor(sf::Color(0, 0, 0, 0));
     rect2.setOutlineColor(sf::Color(0, 0, 0, 255));
     rect2.setOutlineThickness(1);
+
+    sf::Text shape_one_center_x(std::to_string(SHAPE_ONE_POSITION_X), font, 15);
+    sf::Text shape_one_center_y(std::to_string(SHAPE_ONE_POSITION_Y), font, 15);
+
+    shape_one_center_x.setPosition(sf::Vector2f(SHAPE_ONE_POSITION_X - 25, SHAPE_ONE_POSITION_Y - 10));
+    shape_one_center_y.setPosition(sf::Vector2f(SHAPE_ONE_POSITION_X + 10, SHAPE_ONE_POSITION_Y - 10));
+
+    sf::Text shape_two_center_x(std::to_string(SHAPE_TWO_POSITION_X), font, 15);
+    sf::Text shape_two_center_y(std::to_string(SHAPE_TWO_POSITION_Y), font, 15);
+
+    shape_two_center_x.setPosition(sf::Vector2f(SHAPE_TWO_POSITION_X - 25, SHAPE_TWO_POSITION_Y - 10));
+    shape_two_center_y.setPosition(sf::Vector2f(SHAPE_TWO_POSITION_X + 10, SHAPE_TWO_POSITION_Y - 10));
+
+    shape_one_center_x.setColor(sf::Color::Black);
+    shape_one_center_y.setColor(sf::Color::Black);
+    shape_two_center_x.setColor(sf::Color::Black);
+    shape_two_center_y.setColor(sf::Color::Black);
+
+    shape shape1 = shape(shape_one, rect1, shape_one_center_x, shape_one_center_y, SHAPE_ONE_POSITION_X, SHAPE_ONE_POSITION_Y);
+    shape shape2 = shape(shape_two, rect2, shape_two_center_x, shape_two_center_y, SHAPE_TWO_POSITION_X, SHAPE_TWO_POSITION_Y);
+
+    shape1.rect.setOrigin(SHAPE_ONE_WIDTH / 2, SHAPE_ONE_HEIGHT / 2);
+    shape2.rect.setOrigin(SHAPE_TWO_WIDTH / 2, SHAPE_TWO_HEIGHT / 2);
+
+    shape1.rect.setFillColor(sf::Color(78, 245, 103));
+    shape2.rect.setFillColor(sf::Color(247, 62, 62));
 
     // Status
     bool collision = false;
@@ -182,23 +208,6 @@ int main()
 
     bool play_ping = false;
 
-    sf::Text shape_one_center_x(std::to_string(SHAPE_ONE_POSITION_X), font, 15);
-    sf::Text shape_one_center_y(std::to_string(SHAPE_ONE_POSITION_Y), font, 15);
-
-    shape_one_center_x.setPosition(sf::Vector2f(SHAPE_ONE_POSITION_X - 25, SHAPE_ONE_POSITION_Y - 10));
-    shape_one_center_y.setPosition(sf::Vector2f(SHAPE_ONE_POSITION_X + 10, SHAPE_ONE_POSITION_Y - 10));
-
-    sf::Text shape_two_center_x(std::to_string(SHAPE_TWO_POSITION_X), font, 15);
-    sf::Text shape_two_center_y(std::to_string(SHAPE_TWO_POSITION_Y), font, 15);
-
-    shape_two_center_x.setPosition(sf::Vector2f(SHAPE_TWO_POSITION_X - 25, SHAPE_TWO_POSITION_Y - 10));
-    shape_two_center_y.setPosition(sf::Vector2f(SHAPE_TWO_POSITION_X + 10, SHAPE_TWO_POSITION_Y - 10));
-
-    shape_one_center_x.setColor(sf::Color::Black);
-    shape_one_center_y.setColor(sf::Color::Black);
-    shape_two_center_x.setColor(sf::Color::Black);
-    shape_two_center_y.setColor(sf::Color::Black);
-
     while (window.isOpen())
     {
 
@@ -233,10 +242,10 @@ int main()
                         shape1.prev_pos = std::make_pair(shape1.rect.getPosition().x, shape1.rect.getPosition().y);
 
                         shape1.rect.setPosition(sf::Vector2f(shape1.rect.getPosition().x, shape1.rect.getPosition().y - 10));
-                        rect1.setPosition(sf::Vector2f(rect1.getPosition().x, rect1.getPosition().y - 10));
+                        shape1.bounding_box.setPosition(sf::Vector2f(shape1.bounding_box.getPosition().x, shape1.bounding_box.getPosition().y - 10));
 
-                        shape_one_center_x.setPosition(sf::Vector2f(shape_one_center_x.getPosition().x, shape_one_center_x.getPosition().y - 10));
-                        shape_one_center_y.setPosition(sf::Vector2f(shape_one_center_y.getPosition().x, shape_one_center_y.getPosition().y - 10));
+                        shape1.X.setPosition(sf::Vector2f(shape1.X.getPosition().x, shape1.X.getPosition().y - 10));
+                        shape1.Y.setPosition(sf::Vector2f(shape1.Y.getPosition().x, shape1.Y.getPosition().y - 10));
                     }
                     if (event.key.code == sf::Keyboard::Down)
                     {
@@ -244,10 +253,10 @@ int main()
                         shape1.prev_pos = std::make_pair(shape1.rect.getPosition().x, shape1.rect.getPosition().y);
 
                         shape1.rect.setPosition(sf::Vector2f(shape1.rect.getPosition().x, shape1.rect.getPosition().y + 10));
-                        rect1.setPosition(sf::Vector2f(rect1.getPosition().x, rect1.getPosition().y + 10));
+                        shape1.bounding_box.setPosition(sf::Vector2f(shape1.bounding_box.getPosition().x, shape1.bounding_box.getPosition().y + 10));
 
-                        shape_one_center_x.setPosition(sf::Vector2f(shape_one_center_x.getPosition().x, shape_one_center_x.getPosition().y + 10));
-                        shape_one_center_y.setPosition(sf::Vector2f(shape_one_center_y.getPosition().x, shape_one_center_y.getPosition().y + 10));
+                        shape1.X.setPosition(sf::Vector2f(shape1.X.getPosition().x, shape1.X.getPosition().y + 10));
+                        shape1.Y.setPosition(sf::Vector2f(shape1.Y.getPosition().x, shape1.Y.getPosition().y + 10));
                     }
                     if (event.key.code == sf::Keyboard::Left)
                     {
@@ -255,10 +264,10 @@ int main()
                         shape1.prev_pos = std::make_pair(shape1.rect.getPosition().x, shape1.rect.getPosition().y);
 
                         shape1.rect.setPosition(sf::Vector2f(shape1.rect.getPosition().x - 10, shape1.rect.getPosition().y));
-                        rect1.setPosition(sf::Vector2f(rect1.getPosition().x - 10, rect1.getPosition().y));
+                        shape1.bounding_box.setPosition(sf::Vector2f(shape1.bounding_box.getPosition().x - 10, shape1.bounding_box.getPosition().y));
 
-                        shape_one_center_x.setPosition(sf::Vector2f(shape_one_center_x.getPosition().x - 10, shape_one_center_x.getPosition().y));
-                        shape_one_center_y.setPosition(sf::Vector2f(shape_one_center_y.getPosition().x - 10, shape_one_center_y.getPosition().y));
+                        shape1.X.setPosition(sf::Vector2f(shape1.X.getPosition().x - 10, shape1.X.getPosition().y));
+                        shape1.Y.setPosition(sf::Vector2f(shape1.Y.getPosition().x - 10, shape1.Y.getPosition().y));
                     }
                     if (event.key.code == sf::Keyboard::Right)
                     {
@@ -266,13 +275,13 @@ int main()
                         shape1.prev_pos = std::make_pair(shape1.rect.getPosition().x, shape1.rect.getPosition().y);
 
                         shape1.rect.setPosition(sf::Vector2f(shape1.rect.getPosition().x + 10, shape1.rect.getPosition().y));
-                        rect1.setPosition(sf::Vector2f(rect1.getPosition().x + 10, rect1.getPosition().y));
+                        shape1.bounding_box.setPosition(sf::Vector2f(shape1.bounding_box.getPosition().x + 10, shape1.bounding_box.getPosition().y));
 
-                        shape_one_center_x.setPosition(sf::Vector2f(shape_one_center_x.getPosition().x + 10, shape_one_center_x.getPosition().y));
-                        shape_one_center_y.setPosition(sf::Vector2f(shape_one_center_y.getPosition().x + 10, shape_one_center_y.getPosition().y));
+                        shape1.X.setPosition(sf::Vector2f(shape1.X.getPosition().x + 10, shape1.X.getPosition().y));
+                        shape1.Y.setPosition(sf::Vector2f(shape1.Y.getPosition().x + 10, shape1.Y.getPosition().y));
                     }
-                    shape_one_center_x.setString(std::to_string((int)shape1.rect.getPosition().x));
-                    shape_one_center_y.setString(std::to_string((int)shape1.rect.getPosition().y));
+                    shape1.X.setString(std::to_string((int)shape1.rect.getPosition().x));
+                    shape1.Y.setString(std::to_string((int)shape1.rect.getPosition().y));
                 }
                 else if (draw_rect2)
                 {
@@ -282,43 +291,43 @@ int main()
                         shape2.prev_pos = std::make_pair(shape2.rect.getPosition().x, shape2.rect.getPosition().y);
 
                         shape2.rect.setPosition(sf::Vector2f(shape2.rect.getPosition().x, shape2.rect.getPosition().y - 10));
-                        rect2.setPosition(sf::Vector2f(rect2.getPosition().x, rect2.getPosition().y - 10));
+                        shape2.bounding_box.setPosition(sf::Vector2f(shape2.bounding_box.getPosition().x, shape2.bounding_box.getPosition().y - 10));
 
-                        shape_two_center_x.setPosition(sf::Vector2f(shape_two_center_x.getPosition().x, shape_two_center_x.getPosition().y - 10));
-                        shape_two_center_y.setPosition(sf::Vector2f(shape_two_center_y.getPosition().x, shape_two_center_y.getPosition().y - 10));
+                        shape2.X.setPosition(sf::Vector2f(shape2.X.getPosition().x, shape2.X.getPosition().y - 10));
+                        shape2.Y.setPosition(sf::Vector2f(shape2.Y.getPosition().x, shape2.Y.getPosition().y - 10));
                     }
                     if (event.key.code == sf::Keyboard::Down)
                     {
                         shape2.prev_pos = std::make_pair(shape2.rect.getPosition().x, shape2.rect.getPosition().y);
 
                         shape2.rect.setPosition(sf::Vector2f(shape2.rect.getPosition().x, shape2.rect.getPosition().y + 10));
-                        rect2.setPosition(sf::Vector2f(rect2.getPosition().x, rect2.getPosition().y + 10));
+                        shape2.bounding_box.setPosition(sf::Vector2f(shape2.bounding_box.getPosition().x, shape2.bounding_box.getPosition().y + 10));
 
-                        shape_two_center_x.setPosition(sf::Vector2f(shape_two_center_x.getPosition().x, shape_two_center_x.getPosition().y + 10));
-                        shape_two_center_y.setPosition(sf::Vector2f(shape_two_center_y.getPosition().x, shape_two_center_y.getPosition().y + 10));
+                        shape2.X.setPosition(sf::Vector2f(shape2.X.getPosition().x, shape2.X.getPosition().y + 10));
+                        shape2.Y.setPosition(sf::Vector2f(shape2.Y.getPosition().x, shape2.Y.getPosition().y + 10));
                     }
                     if (event.key.code == sf::Keyboard::Left)
                     {
                         shape2.prev_pos = std::make_pair(shape2.rect.getPosition().x, shape2.rect.getPosition().y);
 
                         shape2.rect.setPosition(sf::Vector2f(shape2.rect.getPosition().x - 10, shape2.rect.getPosition().y));
-                        rect2.setPosition(sf::Vector2f(rect2.getPosition().x - 10, rect2.getPosition().y));
+                        shape2.bounding_box.setPosition(sf::Vector2f(shape2.bounding_box.getPosition().x - 10, shape2.bounding_box.getPosition().y));
 
-                        shape_two_center_x.setPosition(sf::Vector2f(shape_two_center_x.getPosition().x - 10, shape_two_center_x.getPosition().y));
-                        shape_two_center_y.setPosition(sf::Vector2f(shape_two_center_y.getPosition().x - 10, shape_two_center_y.getPosition().y));
+                        shape2.X.setPosition(sf::Vector2f(shape2.X.getPosition().x - 10, shape2.X.getPosition().y));
+                        shape2.Y.setPosition(sf::Vector2f(shape2.Y.getPosition().x - 10, shape2.Y.getPosition().y));
                     }
                     if (event.key.code == sf::Keyboard::Right)
                     {
                         shape2.prev_pos = std::make_pair(shape2.rect.getPosition().x, shape2.rect.getPosition().y);
 
                         shape2.rect.setPosition(sf::Vector2f(shape2.rect.getPosition().x + 10, shape2.rect.getPosition().y));
-                        rect2.setPosition(sf::Vector2f(rect2.getPosition().x + 10, rect2.getPosition().y));
+                        shape2.bounding_box.setPosition(sf::Vector2f(shape2.bounding_box.getPosition().x + 10, shape2.bounding_box.getPosition().y));
 
-                        shape_two_center_x.setPosition(sf::Vector2f(shape_two_center_x.getPosition().x + 10, shape_two_center_x.getPosition().y));
-                        shape_two_center_y.setPosition(sf::Vector2f(shape_two_center_y.getPosition().x + 10, shape_two_center_y.getPosition().y));
+                        shape2.X.setPosition(sf::Vector2f(shape2.X.getPosition().x + 10, shape2.X.getPosition().y));
+                        shape2.Y.setPosition(sf::Vector2f(shape2.Y.getPosition().x + 10, shape2.Y.getPosition().y));
                     }
-                    shape_two_center_x.setString(std::to_string((int)shape2.rect.getPosition().x));
-                    shape_two_center_y.setString(std::to_string((int)shape2.rect.getPosition().y));
+                    shape2.X.setString(std::to_string((int)shape2.rect.getPosition().x));
+                    shape2.Y.setString(std::to_string((int)shape2.rect.getPosition().y));
                 }
             }
             if (event.type == sf::Event::MouseButtonPressed)
@@ -381,11 +390,11 @@ int main()
 
                 if (prev_overlap.first > 0)
                 {
-                    std::cout << "Collision origin: vertical, magnitude:" << prev_overlap.first << std::endl;
+                    std::cout << "Collision origin: vertical, magnitude:" << prev_overlap.first << ":" << prev_overlap.second << std::endl;
                 }
                 else if (prev_overlap.second > 0)
                 {
-                    std::cout << "Collision origin: horizontal, magnitude:" << prev_overlap.second << std::endl;
+                    std::cout << "Collision origin: horizontal, magnitude:" << prev_overlap.second << ":" << prev_overlap.first << std::endl;
                 }
 
                 if (play_ping)
@@ -448,12 +457,12 @@ int main()
         window.clear(sf::Color(156, 180, 219));
 
         window.draw(shape1.rect);
-        window.draw(shape_one_center_x);
-        window.draw(shape_one_center_y);
+        window.draw(shape1.X);
+        window.draw(shape1.Y);
 
         window.draw(shape2.rect);
-        window.draw(shape_two_center_x);
-        window.draw(shape_two_center_y);
+        window.draw(shape2.X);
+        window.draw(shape2.Y);
 
         // Rendering texts
 
@@ -474,10 +483,10 @@ int main()
         window.draw(select_two);
 
         if (draw_rect1)
-            window.draw(rect1);
+            window.draw(shape1.bounding_box);
 
         if (draw_rect2)
-            window.draw(rect2);
+            window.draw(shape2.bounding_box);
 
         // Drawing lines
         window.draw(line1);
