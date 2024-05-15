@@ -38,14 +38,22 @@ public:
                           prev_pos(std::make_pair(x, y)) {}
 };
 
-std::pair<float, float> detect_collision(shape *shape_one, shape *shape_two, bool prev = false)
+std::pair<float, float> detect_collision(shape *shape_one, shape *shape_two, bool prev = false, int num = 0)
 {
 
     float dx, dy;
     if (prev) // change starting prev position
     {
-        dx = abs(shape_one->prev_pos.first - shape_two->prev_pos.first);
-        dy = abs(shape_one->prev_pos.second - shape_two->prev_pos.second);
+        if (num == 1)
+        {
+            dx = abs(shape_one->prev_pos.first - shape_two->rect.getPosition().x);
+            dy = abs(shape_one->prev_pos.second - shape_two->rect.getPosition().y);
+        }
+        else if (num == 2)
+        {
+            dx = abs(shape_one->rect.getPosition().x - shape_two->prev_pos.first);
+            dy = abs(shape_one->rect.getPosition().y - shape_two->prev_pos.second);
+        }
     }
     else
     {
@@ -355,7 +363,16 @@ int main()
             {
 
                 // Collision Resolution
-                std::pair<float, float> prev_overlap = detect_collision(&shape1, &shape2, true);
+                int num = 0;
+                if (draw_rect1)
+                {
+                    num = 1;
+                }
+                else if (draw_rect2)
+                {
+                    num = 2;
+                }
+                std::pair<float, float> prev_overlap = detect_collision(&shape1, &shape2, true, num);
 
                 if (prev_overlap.first > 0) // TOP-DOWN collision
                 {
@@ -367,6 +384,8 @@ int main()
                             shape1.bounding_box.setPosition(sf::Vector2f(shape1.rect.getPosition().x, shape1.rect.getPosition().y));
                             shape1.X.setPosition(sf::Vector2f(shape1.X.getPosition().x, shape1.rect.getPosition().y));
                             shape1.Y.setPosition(sf::Vector2f(shape1.Y.getPosition().x, shape1.rect.getPosition().y));
+                            shape1.X.setString(std::to_string((int)shape1.rect.getPosition().x));
+                            shape1.Y.setString(std::to_string((int)shape1.rect.getPosition().y));
                         }
                         else // DOWN collision
                         {
@@ -374,6 +393,8 @@ int main()
                             shape1.bounding_box.setPosition(sf::Vector2f(shape1.rect.getPosition().x, shape1.rect.getPosition().y));
                             shape1.X.setPosition(sf::Vector2f(shape1.X.getPosition().x, shape1.rect.getPosition().y));
                             shape1.Y.setPosition(sf::Vector2f(shape1.Y.getPosition().x, shape1.rect.getPosition().y));
+                            shape1.X.setString(std::to_string((int)shape1.rect.getPosition().x));
+                            shape1.Y.setString(std::to_string((int)shape1.rect.getPosition().y));
                         }
                     }
                     else if (draw_rect2)
@@ -384,6 +405,8 @@ int main()
                             shape2.bounding_box.setPosition(sf::Vector2f(shape2.rect.getPosition().x, shape2.rect.getPosition().y));
                             shape2.X.setPosition(sf::Vector2f(shape2.X.getPosition().x, shape2.rect.getPosition().y));
                             shape2.Y.setPosition(sf::Vector2f(shape2.Y.getPosition().x, shape2.rect.getPosition().y));
+                            shape2.X.setString(std::to_string((int)shape2.rect.getPosition().x));
+                            shape2.Y.setString(std::to_string((int)shape2.rect.getPosition().y));
                         }
                         else // DOWN
                         {
@@ -391,6 +414,8 @@ int main()
                             shape2.bounding_box.setPosition(sf::Vector2f(shape2.rect.getPosition().x, shape2.rect.getPosition().y));
                             shape2.X.setPosition(sf::Vector2f(shape2.X.getPosition().x, shape2.rect.getPosition().y));
                             shape2.Y.setPosition(sf::Vector2f(shape2.Y.getPosition().x, shape2.rect.getPosition().y));
+                            shape2.X.setString(std::to_string((int)shape2.rect.getPosition().x));
+                            shape2.Y.setString(std::to_string((int)shape2.rect.getPosition().y));
                         }
                     }
                 }
@@ -404,6 +429,8 @@ int main()
                             shape1.bounding_box.setPosition(sf::Vector2f(shape1.rect.getPosition().x, shape1.rect.getPosition().y));
                             shape1.X.setPosition(sf::Vector2f(shape1.rect.getPosition().x - 25, shape1.X.getPosition().y));
                             shape1.Y.setPosition(sf::Vector2f(shape1.rect.getPosition().x + 10, shape1.Y.getPosition().y));
+                            shape1.X.setString(std::to_string((int)shape1.rect.getPosition().x));
+                            shape1.Y.setString(std::to_string((int)shape1.rect.getPosition().y));
                         }
                         else // LEFT
                         {
@@ -411,6 +438,8 @@ int main()
                             shape1.bounding_box.setPosition(sf::Vector2f(shape1.rect.getPosition().x, shape1.rect.getPosition().y));
                             shape1.X.setPosition(sf::Vector2f(shape1.rect.getPosition().x - 25, shape1.X.getPosition().y));
                             shape1.Y.setPosition(sf::Vector2f(shape1.rect.getPosition().x + 10, shape1.Y.getPosition().y));
+                            shape1.X.setString(std::to_string((int)shape1.rect.getPosition().x));
+                            shape1.Y.setString(std::to_string((int)shape1.rect.getPosition().y));
                         }
                     }
                     else if (draw_rect2)
@@ -421,6 +450,8 @@ int main()
                             shape2.bounding_box.setPosition(sf::Vector2f(shape2.rect.getPosition().x, shape2.rect.getPosition().y));
                             shape2.X.setPosition(sf::Vector2f(shape2.rect.getPosition().x - 25, shape2.X.getPosition().y));
                             shape2.Y.setPosition(sf::Vector2f(shape2.rect.getPosition().x + 10, shape2.Y.getPosition().y));
+                            shape2.X.setString(std::to_string((int)shape2.rect.getPosition().x));
+                            shape2.Y.setString(std::to_string((int)shape2.rect.getPosition().y));
                         }
                         else // LEFT
                         {
@@ -428,6 +459,8 @@ int main()
                             shape2.bounding_box.setPosition(sf::Vector2f(shape2.rect.getPosition().x, shape2.rect.getPosition().y));
                             shape2.X.setPosition(sf::Vector2f(shape2.rect.getPosition().x - 25, shape2.X.getPosition().y));
                             shape2.Y.setPosition(sf::Vector2f(shape2.rect.getPosition().x + 10, shape2.Y.getPosition().y));
+                            shape2.X.setString(std::to_string((int)shape2.rect.getPosition().x));
+                            shape2.Y.setString(std::to_string((int)shape2.rect.getPosition().y));
                         }
                     }
                 }
