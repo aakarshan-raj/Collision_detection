@@ -236,96 +236,65 @@ int main()
                 if (draw_rect1)
                 {
 
-                    if (event.key.code == sf::Keyboard::Up)
+                    int moveX = 0;
+                    int moveY = 0;
+
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
                     {
-
-                        shape1.prev_pos = std::make_pair(shape1.rect.getPosition().x, shape1.rect.getPosition().y);
-
-                        shape1.rect.setPosition(sf::Vector2f(shape1.rect.getPosition().x, shape1.rect.getPosition().y - 10));
-                        shape1.bounding_box.setPosition(sf::Vector2f(shape1.bounding_box.getPosition().x, shape1.bounding_box.getPosition().y - 10));
-
-                        shape1.X.setPosition(sf::Vector2f(shape1.X.getPosition().x, shape1.X.getPosition().y - 10));
-                        shape1.Y.setPosition(sf::Vector2f(shape1.Y.getPosition().x, shape1.Y.getPosition().y - 10));
+                        moveY = -10;
                     }
-                    if (event.key.code == sf::Keyboard::Down)
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
                     {
-
-                        shape1.prev_pos = std::make_pair(shape1.rect.getPosition().x, shape1.rect.getPosition().y);
-
-                        shape1.rect.setPosition(sf::Vector2f(shape1.rect.getPosition().x, shape1.rect.getPosition().y + 10));
-                        shape1.bounding_box.setPosition(sf::Vector2f(shape1.bounding_box.getPosition().x, shape1.bounding_box.getPosition().y + 10));
-
-                        shape1.X.setPosition(sf::Vector2f(shape1.X.getPosition().x, shape1.X.getPosition().y + 10));
-                        shape1.Y.setPosition(sf::Vector2f(shape1.Y.getPosition().x, shape1.Y.getPosition().y + 10));
+                        moveY = 10;
                     }
-                    if (event.key.code == sf::Keyboard::Left)
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
                     {
-
-                        shape1.prev_pos = std::make_pair(shape1.rect.getPosition().x, shape1.rect.getPosition().y);
-
-                        shape1.rect.setPosition(sf::Vector2f(shape1.rect.getPosition().x - 10, shape1.rect.getPosition().y));
-                        shape1.bounding_box.setPosition(sf::Vector2f(shape1.bounding_box.getPosition().x - 10, shape1.bounding_box.getPosition().y));
-
-                        shape1.X.setPosition(sf::Vector2f(shape1.X.getPosition().x - 10, shape1.X.getPosition().y));
-                        shape1.Y.setPosition(sf::Vector2f(shape1.Y.getPosition().x - 10, shape1.Y.getPosition().y));
+                        moveX = -10;
                     }
-                    if (event.key.code == sf::Keyboard::Right)
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
                     {
-
-                        shape1.prev_pos = std::make_pair(shape1.rect.getPosition().x, shape1.rect.getPosition().y);
-
-                        shape1.rect.setPosition(sf::Vector2f(shape1.rect.getPosition().x + 10, shape1.rect.getPosition().y));
-                        shape1.bounding_box.setPosition(sf::Vector2f(shape1.bounding_box.getPosition().x + 10, shape1.bounding_box.getPosition().y));
-
-                        shape1.X.setPosition(sf::Vector2f(shape1.X.getPosition().x + 10, shape1.X.getPosition().y));
-                        shape1.Y.setPosition(sf::Vector2f(shape1.Y.getPosition().x + 10, shape1.Y.getPosition().y));
+                        moveX = 10;
                     }
+
+                    shape1.prev_pos = std::make_pair(shape1.rect.getPosition().x, shape1.rect.getPosition().y + moveY);
+
+                    shape1.rect.setPosition(sf::Vector2f(shape1.rect.getPosition().x + moveX, shape1.rect.getPosition().y + moveY));
+                    shape1.bounding_box.setPosition(sf::Vector2f(shape1.bounding_box.getPosition().x + moveX, shape1.bounding_box.getPosition().y + moveY));
+                    shape1.X.setPosition(sf::Vector2f(shape1.X.getPosition().x + moveX, shape1.X.getPosition().y + moveY));
+                    shape1.Y.setPosition(sf::Vector2f(shape1.Y.getPosition().x + moveX, shape1.Y.getPosition().y + moveY));
+
                     shape1.X.setString(std::to_string((int)shape1.rect.getPosition().x));
                     shape1.Y.setString(std::to_string((int)shape1.rect.getPosition().y));
                 }
                 else if (draw_rect2)
                 {
-                    if (event.key.code == sf::Keyboard::Up)
+                    int moveX = 0;
+                    int moveY = 0;
+
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
                     {
-
-                        shape2.prev_pos = std::make_pair(shape2.rect.getPosition().x, shape2.rect.getPosition().y);
-
-                        shape2.rect.setPosition(sf::Vector2f(shape2.rect.getPosition().x, shape2.rect.getPosition().y - 10));
-                        shape2.bounding_box.setPosition(sf::Vector2f(shape2.bounding_box.getPosition().x, shape2.bounding_box.getPosition().y - 10));
-
-                        shape2.X.setPosition(sf::Vector2f(shape2.X.getPosition().x, shape2.X.getPosition().y - 10));
-                        shape2.Y.setPosition(sf::Vector2f(shape2.Y.getPosition().x, shape2.Y.getPosition().y - 10));
+                        moveY = -10;
                     }
-                    if (event.key.code == sf::Keyboard::Down)
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
                     {
-                        shape2.prev_pos = std::make_pair(shape2.rect.getPosition().x, shape2.rect.getPosition().y);
-
-                        shape2.rect.setPosition(sf::Vector2f(shape2.rect.getPosition().x, shape2.rect.getPosition().y + 10));
-                        shape2.bounding_box.setPosition(sf::Vector2f(shape2.bounding_box.getPosition().x, shape2.bounding_box.getPosition().y + 10));
-
-                        shape2.X.setPosition(sf::Vector2f(shape2.X.getPosition().x, shape2.X.getPosition().y + 10));
-                        shape2.Y.setPosition(sf::Vector2f(shape2.Y.getPosition().x, shape2.Y.getPosition().y + 10));
+                        moveY = 10;
                     }
-                    if (event.key.code == sf::Keyboard::Left)
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
                     {
-                        shape2.prev_pos = std::make_pair(shape2.rect.getPosition().x, shape2.rect.getPosition().y);
-
-                        shape2.rect.setPosition(sf::Vector2f(shape2.rect.getPosition().x - 10, shape2.rect.getPosition().y));
-                        shape2.bounding_box.setPosition(sf::Vector2f(shape2.bounding_box.getPosition().x - 10, shape2.bounding_box.getPosition().y));
-
-                        shape2.X.setPosition(sf::Vector2f(shape2.X.getPosition().x - 10, shape2.X.getPosition().y));
-                        shape2.Y.setPosition(sf::Vector2f(shape2.Y.getPosition().x - 10, shape2.Y.getPosition().y));
+                        moveX = -10;
                     }
-                    if (event.key.code == sf::Keyboard::Right)
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
                     {
-                        shape2.prev_pos = std::make_pair(shape2.rect.getPosition().x, shape2.rect.getPosition().y);
-
-                        shape2.rect.setPosition(sf::Vector2f(shape2.rect.getPosition().x + 10, shape2.rect.getPosition().y));
-                        shape2.bounding_box.setPosition(sf::Vector2f(shape2.bounding_box.getPosition().x + 10, shape2.bounding_box.getPosition().y));
-
-                        shape2.X.setPosition(sf::Vector2f(shape2.X.getPosition().x + 10, shape2.X.getPosition().y));
-                        shape2.Y.setPosition(sf::Vector2f(shape2.Y.getPosition().x + 10, shape2.Y.getPosition().y));
+                        moveX = 10;
                     }
+
+                    shape2.prev_pos = std::make_pair(shape2.rect.getPosition().x, shape2.rect.getPosition().y);
+
+                    shape2.rect.setPosition(sf::Vector2f(shape2.rect.getPosition().x + moveX, shape2.rect.getPosition().y + moveY));
+                    shape2.bounding_box.setPosition(sf::Vector2f(shape2.bounding_box.getPosition().x + moveX, shape2.bounding_box.getPosition().y + moveY));
+                    shape2.X.setPosition(sf::Vector2f(shape2.X.getPosition().x + moveX, shape2.X.getPosition().y + moveY));
+                    shape2.Y.setPosition(sf::Vector2f(shape2.Y.getPosition().x + moveX, shape2.Y.getPosition().y + moveY));
+
                     shape2.X.setString(std::to_string((int)shape2.rect.getPosition().x));
                     shape2.Y.setString(std::to_string((int)shape2.rect.getPosition().y));
                 }
