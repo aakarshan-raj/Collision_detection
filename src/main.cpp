@@ -29,8 +29,8 @@ public:
     std::pair<int, int> prev_pos;
     sf::Text X;
     sf::Text Y;
-    shape(sf::RectangleShape rect_para, sf::RectangleShape bounding,
-          sf::Text x_point, sf::Text y_point,
+    shape(const sf::RectangleShape & rect_para, const sf::RectangleShape & bounding,
+          const sf::Text & x_point, const sf::Text & y_point,
           int x, int y) : rect(rect_para),
                           bounding_box(bounding),
                           X(x_point),
