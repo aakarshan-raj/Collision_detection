@@ -1,0 +1,875 @@
+desc: (none)
+cmd: ./bin/sfml.out
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=144767866
+mem_heap_B=1117340
+mem_heap_extra_B=108276
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=340818055
+mem_heap_B=12144078
+mem_heap_extra_B=189458
+mem_stacks_B=0
+heap_tree=peak
+n8: 12144078 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8546304 0x5153E0C: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+  n1: 8546304 0x515690A: alcCreateContext (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+   n1: 8546304 0x48FBD07: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+    n1: 8546304 0x48FC2E9: sf::AlResource::AlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+     n1: 8546304 0x48FC902: sf::SoundBuffer::SoundBuffer() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+      n0: 8546304 0x10BEF6: main (main.cpp:85)
+ n0: 1665526 in 757 places, all below massif's threshold (1.00%)
+ n1: 537920 0x5D294E6: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+  n1: 537920 0x5D50F4C: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+   n1: 537920 0x5C6439B: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+    n1: 537920 0x5C5DECA: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+     n1: 537920 0x5A9ECEE: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+      n1: 537920 0x5A88054: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+       n1: 537920 0x5465A83: ??? (in /usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0)
+        n2: 537920 0x4881D93: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+         n1: 268960 0x4883C8F: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 268960 0x487C147: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 268960 0x48B5FC4: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+            n0: 268960 0x10BE20: main (main.cpp:78)
+         n1: 268960 0x4883DE5: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 268960 0x4873B76: sf::GlResource::GlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 268960 0x4876A02: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+            n1: 268960 0x48B5F8C: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+             n0: 268960 0x10BE20: main (main.cpp:78)
+ n1: 420672 0x61BCA2E: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+  n1: 420672 0x5D50EF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+   n1: 420672 0x5C6439B: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+    n1: 420672 0x5C5DECA: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+     n1: 420672 0x5A9ECEE: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+      n1: 420672 0x5A88054: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+       n1: 420672 0x5465A83: ??? (in /usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0)
+        n2: 420672 0x4881D93: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+         n1: 210336 0x4883C8F: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 210336 0x487C147: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 210336 0x48B5FC4: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+            n0: 210336 0x10BE20: main (main.cpp:78)
+         n1: 210336 0x4883DE5: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 210336 0x4873B76: sf::GlResource::GlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 210336 0x4876A02: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+            n1: 210336 0x48B5F8C: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+             n0: 210336 0x10BE20: main (main.cpp:78)
+ n2: 388288 0x5C6D314: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+  n0: 198240 in 83 places, all below massif's threshold (1.00%)
+  n1: 190048 0x5C6D37D: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+   n0: 190048 in 74 places, all below massif's threshold (1.00%)
+ n1: 213760 0x51652BB: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+  n1: 213760 0x516CD10: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+   n1: 213760 0x5170A01: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+    n1: 213760 0x515470A: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+     n1: 213760 0x51568EF: alcCreateContext (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+      n1: 213760 0x48FBD07: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+       n1: 213760 0x48FC2E9: sf::AlResource::AlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+        n1: 213760 0x48FC902: sf::SoundBuffer::SoundBuffer() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+         n0: 213760 0x10BEF6: main (main.cpp:85)
+ n2: 210656 0x5A886B2: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+  n1: 132704 0x5A9F107: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+   n1: 132704 0x5A903C8: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+    n1: 132704 0x5A8CB1B: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+     n1: 132704 0x4880D44: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+      n1: 132704 0x4883DBD: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+       n1: 132704 0x4873B76: sf::GlResource::GlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+        n1: 132704 0x4876A02: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+         n1: 132704 0x48B5F8C: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+          n0: 132704 0x10BE20: main (main.cpp:78)
+  n0: 77952 in 1 place, below massif's threshold (1.00%)
+ n1: 160952 0xD56BE88: ZSTD_createDCtx_advanced (in /usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8)
+  n1: 160952 0xD56BFBE: ZSTD_createDCtx (in /usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8)
+   n1: 160952 0xD5722DC: ZSTD_decompress (in /usr/lib/x86_64-linux-gnu/libzstd.so.1.4.8)
+    n1: 160952 0x5C71B3E: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+     n1: 160952 0x5C67C63: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+      n1: 160952 0x5C684F4: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+       n1: 160952 0x68B4C17: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+        n2: 160952 0x68BF1D9: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+         n1: 160952 0x5D5DCAC: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+          n1: 160952 0x5D5E93E: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+           n1: 160952 0x5D5F29B: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+            n1: 160952 0x5D5F76C: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+             n1: 160952 0x5EE8B95: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+              n1: 160952 0x5EE6DA4: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+               n1: 160952 0x5ED2F51: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+                n1: 160952 0x5E2D418: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+                 n1: 160952 0x5CD8E3C: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+                  n1: 160952 0x5CD919C: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+                   n2: 160952 0x5CD9434: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+                    n1: 160952 0x5E21CB7: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+                     n1: 160952 0x48ADA51: sf::RenderTarget::drawPrimitives(sf::PrimitiveType, unsigned long, unsigned long) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+                      n1: 160952 0x48B5B53: sf::RenderTarget::draw(sf::Vertex const*, unsigned long, sf::PrimitiveType, sf::RenderStates const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+                       n1: 160952 0x48BDD5C: sf::VertexArray::draw(sf::RenderTarget&, sf::RenderStates) const (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+                        n2: 160952 0x48AD5AC: sf::RenderTarget::draw(sf::Drawable const&, sf::RenderStates const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+                         n1: 160952 0x48BEA1E: sf::Text::draw(sf::RenderTarget&, sf::RenderStates) const (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+                          n1: 160952 0x48AD5AC: sf::RenderTarget::draw(sf::Drawable const&, sf::RenderStates const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+                           n0: 160952 0x110AD8: main (main.cpp:528)
+                         n0: 0 in 1 place, below massif's threshold (1.00%)
+                    n0: 0 in 1 place, below massif's threshold (1.00%)
+         n0: 0 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=3
+#-----------
+time=558953742
+mem_heap_B=12048277
+mem_heap_extra_B=194707
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=758789357
+mem_heap_B=12048525
+mem_heap_extra_B=194755
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=885753352
+mem_heap_B=12048557
+mem_heap_extra_B=194763
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=1095784904
+mem_heap_B=12048749
+mem_heap_extra_B=194819
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=1238945576
+mem_heap_B=12049373
+mem_heap_extra_B=194843
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=1458095519
+mem_heap_B=12048741
+mem_heap_extra_B=194819
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=1640040905
+mem_heap_B=12048821
+mem_heap_extra_B=194843
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=1885310550
+mem_heap_B=12048749
+mem_heap_extra_B=194835
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=2108288322
+mem_heap_B=12049021
+mem_heap_extra_B=194851
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=2290861671
+mem_heap_B=12048989
+mem_heap_extra_B=194827
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=2550450739
+mem_heap_B=12048733
+mem_heap_extra_B=194819
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=2771129131
+mem_heap_B=12048881
+mem_heap_extra_B=194871
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=2991894173
+mem_heap_B=12048873
+mem_heap_extra_B=194879
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=3181125002
+mem_heap_B=12048673
+mem_heap_extra_B=194823
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=3433353845
+mem_heap_B=12049397
+mem_heap_extra_B=194931
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=3624580436
+mem_heap_B=12049793
+mem_heap_extra_B=194863
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=3879117953
+mem_heap_B=12049113
+mem_heap_extra_B=194887
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=4038408811
+mem_heap_B=12058865
+mem_heap_extra_B=195463
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=4198366511
+mem_heap_B=12058785
+mem_heap_extra_B=195415
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=4463265055
+mem_heap_B=12058673
+mem_heap_extra_B=195439
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=4727567417
+mem_heap_B=12058713
+mem_heap_extra_B=195431
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=4940106009
+mem_heap_B=12058665
+mem_heap_extra_B=195407
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=5152285464
+mem_heap_B=12058713
+mem_heap_extra_B=195415
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=5310865211
+mem_heap_B=12058721
+mem_heap_extra_B=195447
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=5522926738
+mem_heap_B=12058833
+mem_heap_extra_B=195455
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=5628622696
+mem_heap_B=12058905
+mem_heap_extra_B=195399
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=5839917755
+mem_heap_B=12059001
+mem_heap_extra_B=195479
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=5946428613
+mem_heap_B=12059737
+mem_heap_extra_B=195447
+mem_stacks_B=0
+heap_tree=detailed
+n7: 12059737 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8546304 0x5153E0C: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+  n1: 8546304 0x515690A: alcCreateContext (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+   n1: 8546304 0x48FBD07: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+    n1: 8546304 0x48FC2E9: sf::AlResource::AlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+     n1: 8546304 0x48FC902: sf::SoundBuffer::SoundBuffer() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+      n0: 8546304 0x10BEF6: main (main.cpp:85)
+ n0: 1735177 in 775 places, all below massif's threshold (1.00%)
+ n1: 537920 0x5D294E6: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+  n1: 537920 0x5D50F4C: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+   n1: 537920 0x5C6439B: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+    n1: 537920 0x5C5DECA: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+     n1: 537920 0x5A9ECEE: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+      n1: 537920 0x5A88054: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+       n1: 537920 0x5465A83: ??? (in /usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0)
+        n2: 537920 0x4881D93: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+         n1: 268960 0x4883C8F: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 268960 0x487C147: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 268960 0x48B5FC4: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+            n0: 268960 0x10BE20: main (main.cpp:78)
+         n1: 268960 0x4883DE5: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 268960 0x4873B76: sf::GlResource::GlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 268960 0x4876A02: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+            n1: 268960 0x48B5F8C: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+             n0: 268960 0x10BE20: main (main.cpp:78)
+ n1: 420672 0x61BCA2E: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+  n1: 420672 0x5D50EF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+   n1: 420672 0x5C6439B: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+    n1: 420672 0x5C5DECA: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+     n1: 420672 0x5A9ECEE: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+      n1: 420672 0x5A88054: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+       n1: 420672 0x5465A83: ??? (in /usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0)
+        n2: 420672 0x4881D93: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+         n1: 210336 0x4883C8F: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 210336 0x487C147: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 210336 0x48B5FC4: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+            n0: 210336 0x10BE20: main (main.cpp:78)
+         n1: 210336 0x4883DE5: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 210336 0x4873B76: sf::GlResource::GlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 210336 0x4876A02: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+            n1: 210336 0x48B5F8C: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+             n0: 210336 0x10BE20: main (main.cpp:78)
+ n2: 395248 0x5C6D314: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+  n0: 203856 in 83 places, all below massif's threshold (1.00%)
+  n1: 191392 0x5C6D37D: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+   n0: 191392 in 74 places, all below massif's threshold (1.00%)
+ n1: 213760 0x51652BB: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+  n1: 213760 0x516CD10: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+   n1: 213760 0x5170A01: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+    n1: 213760 0x515470A: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+     n1: 213760 0x51568EF: alcCreateContext (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+      n1: 213760 0x48FBD07: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+       n1: 213760 0x48FC2E9: sf::AlResource::AlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+        n1: 213760 0x48FC902: sf::SoundBuffer::SoundBuffer() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+         n0: 213760 0x10BEF6: main (main.cpp:85)
+ n2: 210656 0x5A886B2: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+  n1: 132704 0x5A9F107: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+   n1: 132704 0x5A903C8: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+    n1: 132704 0x5A8CB1B: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+     n1: 132704 0x4880D44: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+      n1: 132704 0x4883DBD: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+       n1: 132704 0x4873B76: sf::GlResource::GlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+        n1: 132704 0x4876A02: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+         n1: 132704 0x48B5F8C: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+          n0: 132704 0x10BE20: main (main.cpp:78)
+  n0: 77952 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=31
+#-----------
+time=6104939018
+mem_heap_B=12059121
+mem_heap_extra_B=195503
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=6265256457
+mem_heap_B=12059737
+mem_heap_extra_B=195431
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=6370896514
+mem_heap_B=12059001
+mem_heap_extra_B=195471
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=6582189158
+mem_heap_B=12059089
+mem_heap_extra_B=195479
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=6795031169
+mem_heap_B=12059761
+mem_heap_extra_B=195479
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=7011424257
+mem_heap_B=12058761
+mem_heap_extra_B=195423
+mem_stacks_B=0
+heap_tree=detailed
+n7: 12058761 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8546304 0x5153E0C: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+  n1: 8546304 0x515690A: alcCreateContext (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+   n1: 8546304 0x48FBD07: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+    n1: 8546304 0x48FC2E9: sf::AlResource::AlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+     n1: 8546304 0x48FC902: sf::SoundBuffer::SoundBuffer() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+      n0: 8546304 0x10BEF6: main (main.cpp:85)
+ n0: 1734201 in 775 places, all below massif's threshold (1.00%)
+ n1: 537920 0x5D294E6: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+  n1: 537920 0x5D50F4C: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+   n1: 537920 0x5C6439B: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+    n1: 537920 0x5C5DECA: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+     n1: 537920 0x5A9ECEE: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+      n1: 537920 0x5A88054: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+       n1: 537920 0x5465A83: ??? (in /usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0)
+        n2: 537920 0x4881D93: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+         n1: 268960 0x4883C8F: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 268960 0x487C147: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 268960 0x48B5FC4: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+            n0: 268960 0x10BE20: main (main.cpp:78)
+         n1: 268960 0x4883DE5: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 268960 0x4873B76: sf::GlResource::GlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 268960 0x4876A02: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+            n1: 268960 0x48B5F8C: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+             n0: 268960 0x10BE20: main (main.cpp:78)
+ n1: 420672 0x61BCA2E: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+  n1: 420672 0x5D50EF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+   n1: 420672 0x5C6439B: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+    n1: 420672 0x5C5DECA: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+     n1: 420672 0x5A9ECEE: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+      n1: 420672 0x5A88054: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+       n1: 420672 0x5465A83: ??? (in /usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0)
+        n2: 420672 0x4881D93: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+         n1: 210336 0x4883C8F: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 210336 0x487C147: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 210336 0x48B5FC4: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+            n0: 210336 0x10BE20: main (main.cpp:78)
+         n1: 210336 0x4883DE5: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 210336 0x4873B76: sf::GlResource::GlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 210336 0x4876A02: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+            n1: 210336 0x48B5F8C: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+             n0: 210336 0x10BE20: main (main.cpp:78)
+ n2: 395248 0x5C6D314: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+  n0: 203856 in 83 places, all below massif's threshold (1.00%)
+  n1: 191392 0x5C6D37D: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+   n0: 191392 in 74 places, all below massif's threshold (1.00%)
+ n1: 213760 0x51652BB: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+  n1: 213760 0x516CD10: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+   n1: 213760 0x5170A01: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+    n1: 213760 0x515470A: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+     n1: 213760 0x51568EF: alcCreateContext (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+      n1: 213760 0x48FBD07: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+       n1: 213760 0x48FC2E9: sf::AlResource::AlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+        n1: 213760 0x48FC902: sf::SoundBuffer::SoundBuffer() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+         n0: 213760 0x10BEF6: main (main.cpp:85)
+ n2: 210656 0x5A886B2: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+  n1: 132704 0x5A9F107: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+   n1: 132704 0x5A903C8: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+    n1: 132704 0x5A8CB1B: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+     n1: 132704 0x4880D44: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+      n1: 132704 0x4883DBD: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+       n1: 132704 0x4873B76: sf::GlResource::GlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+        n1: 132704 0x4876A02: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+         n1: 132704 0x48B5F8C: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+          n0: 132704 0x10BE20: main (main.cpp:78)
+  n0: 77952 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=37
+#-----------
+time=7172041527
+mem_heap_B=12059753
+mem_heap_extra_B=195431
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=7386263195
+mem_heap_B=12060001
+mem_heap_extra_B=195463
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=7546974063
+mem_heap_B=12060281
+mem_heap_extra_B=195439
+mem_stacks_B=0
+heap_tree=detailed
+n7: 12060281 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8546304 0x5153E0C: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+  n1: 8546304 0x515690A: alcCreateContext (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+   n1: 8546304 0x48FBD07: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+    n1: 8546304 0x48FC2E9: sf::AlResource::AlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+     n1: 8546304 0x48FC902: sf::SoundBuffer::SoundBuffer() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+      n0: 8546304 0x10BEF6: main (main.cpp:85)
+ n0: 1735721 in 775 places, all below massif's threshold (1.00%)
+ n1: 537920 0x5D294E6: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+  n1: 537920 0x5D50F4C: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+   n1: 537920 0x5C6439B: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+    n1: 537920 0x5C5DECA: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+     n1: 537920 0x5A9ECEE: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+      n1: 537920 0x5A88054: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+       n1: 537920 0x5465A83: ??? (in /usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0)
+        n2: 537920 0x4881D93: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+         n1: 268960 0x4883C8F: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 268960 0x487C147: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 268960 0x48B5FC4: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+            n0: 268960 0x10BE20: main (main.cpp:78)
+         n1: 268960 0x4883DE5: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 268960 0x4873B76: sf::GlResource::GlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 268960 0x4876A02: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+            n1: 268960 0x48B5F8C: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+             n0: 268960 0x10BE20: main (main.cpp:78)
+ n1: 420672 0x61BCA2E: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+  n1: 420672 0x5D50EF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+   n1: 420672 0x5C6439B: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+    n1: 420672 0x5C5DECA: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+     n1: 420672 0x5A9ECEE: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+      n1: 420672 0x5A88054: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+       n1: 420672 0x5465A83: ??? (in /usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0)
+        n2: 420672 0x4881D93: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+         n1: 210336 0x4883C8F: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 210336 0x487C147: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 210336 0x48B5FC4: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+            n0: 210336 0x10BE20: main (main.cpp:78)
+         n1: 210336 0x4883DE5: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 210336 0x4873B76: sf::GlResource::GlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 210336 0x4876A02: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+            n1: 210336 0x48B5F8C: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+             n0: 210336 0x10BE20: main (main.cpp:78)
+ n2: 395248 0x5C6D314: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+  n0: 203856 in 83 places, all below massif's threshold (1.00%)
+  n1: 191392 0x5C6D37D: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+   n0: 191392 in 74 places, all below massif's threshold (1.00%)
+ n1: 213760 0x51652BB: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+  n1: 213760 0x516CD10: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+   n1: 213760 0x5170A01: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+    n1: 213760 0x515470A: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+     n1: 213760 0x51568EF: alcCreateContext (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+      n1: 213760 0x48FBD07: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+       n1: 213760 0x48FC2E9: sf::AlResource::AlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+        n1: 213760 0x48FC902: sf::SoundBuffer::SoundBuffer() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+         n0: 213760 0x10BEF6: main (main.cpp:85)
+ n2: 210656 0x5A886B2: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+  n1: 132704 0x5A9F107: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+   n1: 132704 0x5A903C8: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+    n1: 132704 0x5A8CB1B: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+     n1: 132704 0x4880D44: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+      n1: 132704 0x4883DBD: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+       n1: 132704 0x4873B76: sf::GlResource::GlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+        n1: 132704 0x4876A02: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+         n1: 132704 0x48B5F8C: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+          n0: 132704 0x10BE20: main (main.cpp:78)
+  n0: 77952 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=40
+#-----------
+time=7707584562
+mem_heap_B=12060325
+mem_heap_extra_B=195491
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=7868169004
+mem_heap_B=12060325
+mem_heap_extra_B=195539
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=8030017568
+mem_heap_B=12068501
+mem_heap_extra_B=195515
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=8244488814
+mem_heap_B=12060341
+mem_heap_extra_B=195491
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=8458595034
+mem_heap_B=12060293
+mem_heap_extra_B=195451
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=8620819806
+mem_heap_B=12060325
+mem_heap_extra_B=195443
+mem_stacks_B=0
+heap_tree=detailed
+n7: 12060325 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8546304 0x5153E0C: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+  n1: 8546304 0x515690A: alcCreateContext (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+   n1: 8546304 0x48FBD07: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+    n1: 8546304 0x48FC2E9: sf::AlResource::AlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+     n1: 8546304 0x48FC902: sf::SoundBuffer::SoundBuffer() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+      n0: 8546304 0x10BEF6: main (main.cpp:85)
+ n0: 1735765 in 775 places, all below massif's threshold (1.00%)
+ n1: 537920 0x5D294E6: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+  n1: 537920 0x5D50F4C: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+   n1: 537920 0x5C6439B: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+    n1: 537920 0x5C5DECA: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+     n1: 537920 0x5A9ECEE: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+      n1: 537920 0x5A88054: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+       n1: 537920 0x5465A83: ??? (in /usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0)
+        n2: 537920 0x4881D93: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+         n1: 268960 0x4883C8F: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 268960 0x487C147: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 268960 0x48B5FC4: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+            n0: 268960 0x10BE20: main (main.cpp:78)
+         n1: 268960 0x4883DE5: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 268960 0x4873B76: sf::GlResource::GlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 268960 0x4876A02: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+            n1: 268960 0x48B5F8C: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+             n0: 268960 0x10BE20: main (main.cpp:78)
+ n1: 420672 0x61BCA2E: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+  n1: 420672 0x5D50EF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+   n1: 420672 0x5C6439B: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+    n1: 420672 0x5C5DECA: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+     n1: 420672 0x5A9ECEE: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+      n1: 420672 0x5A88054: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+       n1: 420672 0x5465A83: ??? (in /usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0)
+        n2: 420672 0x4881D93: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+         n1: 210336 0x4883C8F: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 210336 0x487C147: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 210336 0x48B5FC4: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+            n0: 210336 0x10BE20: main (main.cpp:78)
+         n1: 210336 0x4883DE5: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 210336 0x4873B76: sf::GlResource::GlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 210336 0x4876A02: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+            n1: 210336 0x48B5F8C: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+             n0: 210336 0x10BE20: main (main.cpp:78)
+ n2: 395248 0x5C6D314: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+  n0: 203856 in 83 places, all below massif's threshold (1.00%)
+  n1: 191392 0x5C6D37D: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+   n0: 191392 in 74 places, all below massif's threshold (1.00%)
+ n1: 213760 0x51652BB: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+  n1: 213760 0x516CD10: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+   n1: 213760 0x5170A01: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+    n1: 213760 0x515470A: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+     n1: 213760 0x51568EF: alcCreateContext (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+      n1: 213760 0x48FBD07: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+       n1: 213760 0x48FC2E9: sf::AlResource::AlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+        n1: 213760 0x48FC902: sf::SoundBuffer::SoundBuffer() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+         n0: 213760 0x10BEF6: main (main.cpp:85)
+ n2: 210656 0x5A886B2: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+  n1: 132704 0x5A9F107: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+   n1: 132704 0x5A903C8: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+    n1: 132704 0x5A8CB1B: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+     n1: 132704 0x4880D44: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+      n1: 132704 0x4883DBD: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+       n1: 132704 0x4873B76: sf::GlResource::GlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+        n1: 132704 0x4876A02: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+         n1: 132704 0x48B5F8C: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+          n0: 132704 0x10BE20: main (main.cpp:78)
+  n0: 77952 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=46
+#-----------
+time=8783682214
+mem_heap_B=12060293
+mem_heap_extra_B=195435
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=8998558623
+mem_heap_B=12060349
+mem_heap_extra_B=195459
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=9212859333
+mem_heap_B=12060301
+mem_heap_extra_B=195483
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=9375086027
+mem_heap_B=12060325
+mem_heap_extra_B=195443
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=9481160512
+mem_heap_B=12061245
+mem_heap_extra_B=195483
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=9586864143
+mem_heap_B=12060309
+mem_heap_extra_B=195451
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=9692522585
+mem_heap_B=12060493
+mem_heap_extra_B=195467
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=9798167107
+mem_heap_B=12060589
+mem_heap_extra_B=195467
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=9903813213
+mem_heap_B=12060557
+mem_heap_extra_B=195475
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=10011695794
+mem_heap_B=11630627
+mem_heap_extra_B=147677
+mem_stacks_B=0
+heap_tree=detailed
+n7: 11630627 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8546304 0x5153E0C: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+  n1: 8546304 0x515690A: alcCreateContext (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+   n1: 8546304 0x48FBD07: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+    n1: 8546304 0x48FC2E9: sf::AlResource::AlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+     n1: 8546304 0x48FC902: sf::SoundBuffer::SoundBuffer() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+      n0: 8546304 0x10BEF6: main (main.cpp:85)
+ n0: 1515091 in 775 places, all below massif's threshold (1.00%)
+ n1: 537920 0x5D294E6: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+  n1: 537920 0x5D50F4C: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+   n1: 537920 0x5C6439B: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+    n1: 537920 0x5C5DECA: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+     n1: 537920 0x5A9ECEE: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+      n1: 537920 0x5A88054: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+       n1: 537920 0x5465A83: ??? (in /usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0)
+        n2: 537920 0x4881D93: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+         n1: 268960 0x4883C8F: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 268960 0x487C147: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 268960 0x48B5FC4: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+            n0: 268960 0x10BE20: main (main.cpp:78)
+         n1: 268960 0x4883DE5: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 268960 0x4873B76: sf::GlResource::GlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 268960 0x4876A02: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+            n1: 268960 0x48B5F8C: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+             n0: 268960 0x10BE20: main (main.cpp:78)
+ n1: 420672 0x61BCA2E: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+  n1: 420672 0x5D50EF0: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+   n1: 420672 0x5C6439B: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+    n1: 420672 0x5C5DECA: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+     n1: 420672 0x5A9ECEE: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+      n1: 420672 0x5A88054: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+       n1: 420672 0x5465A83: ??? (in /usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0)
+        n2: 420672 0x4881D93: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+         n1: 210336 0x4883C8F: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 210336 0x487C147: sf::Window::create(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 210336 0x48B5FC4: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+            n0: 210336 0x10BE20: main (main.cpp:78)
+         n1: 210336 0x4883DE5: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+          n1: 210336 0x4873B76: sf::GlResource::GlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+           n1: 210336 0x4876A02: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+            n1: 210336 0x48B5F8C: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+             n0: 210336 0x10BE20: main (main.cpp:78)
+ n1: 213760 0x51652BB: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+  n1: 213760 0x516CD10: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+   n1: 213760 0x5170A01: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+    n1: 213760 0x515470A: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+     n1: 213760 0x51568EF: alcCreateContext (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.19.1)
+      n1: 213760 0x48FBD07: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+       n1: 213760 0x48FC2E9: sf::AlResource::AlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+        n1: 213760 0x48FC902: sf::SoundBuffer::SoundBuffer() (in /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1)
+         n0: 213760 0x10BEF6: main (main.cpp:85)
+ n2: 210656 0x5A886B2: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+  n1: 132704 0x5A9F107: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+   n1: 132704 0x5A903C8: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+    n1: 132704 0x5A8CB1B: ??? (in /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0.0.0)
+     n1: 132704 0x4880D44: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+      n1: 132704 0x4883DBD: ??? (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+       n1: 132704 0x4873B76: sf::GlResource::GlResource() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+        n1: 132704 0x4876A02: sf::Window::Window() (in /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1)
+         n1: 132704 0x48B5F8C: sf::RenderWindow::RenderWindow(sf::VideoMode, sf::String const&, unsigned int, sf::ContextSettings const&) (in /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1)
+          n0: 132704 0x10BE20: main (main.cpp:78)
+  n0: 77952 in 1 place, below massif's threshold (1.00%)
+ n1: 186224 0x5C6D314: ??? (in /usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+  n0: 186224 in 84 places, all below massif's threshold (1.00%)
